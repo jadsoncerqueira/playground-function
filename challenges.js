@@ -4,5 +4,12 @@ function compareTrue(valor1, valor2){
   } else {
       return false
   }
+
+}
+
+function calcArea(base, height){
+  let resultado = (base * height) / 2
+  return resultado
+
 }
 
