@@ -25,4 +25,12 @@ function splitSentence(frase){
       }
   }
   return listaPalavra
+
+}
+
+function concatName(lista){
+  ultimoItem = lista[lista.length - 1]
+  primeiroItem = lista[0]
+  return (ultimoItem + ", " + primeiroItem )
+
 }
