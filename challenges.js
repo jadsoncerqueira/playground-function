@@ -13,3 +13,16 @@ function calcArea(base, height){
 
 }
 
+function splitSentence(frase){
+  let listaPalavra = []
+  let palavra = ''
+  for (let i = 0 ; i <= frase.length; i += 1){
+      if (frase[i] === ' ' || i === frase.length){
+        listaPalavra.push(palavra)
+        palavra = ''
+      } else {
+        palavra += frase[i]
+      }
+  }
+  return listaPalavra
+}
