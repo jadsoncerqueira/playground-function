@@ -34,3 +34,9 @@ function concatName(lista){
   return (ultimoItem + ", " + primeiroItem )
 
 }
+
+function footballPoints(wins, ties){
+  let resultado = (wins * 3) + (ties * 1)
+  return resultado
+  
+}
