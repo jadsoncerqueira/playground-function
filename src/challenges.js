@@ -92,13 +92,73 @@ function fizzBuzz() {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
-}
-function decode() {
-  // seu código aqui
-}
+function encode(frase) {
+  let aux = ''
+  fraseCodificada = ''
+  for (let i = 0; i < frase.length; i += 1){
+    aux = frase[i]
+    switch (aux) {
+      case 'a':
+        fraseCodificada += '1'
+        break
+      
+      case 'e':
+        fraseCodificada += '2'
+        break
 
+      case 'i':
+        fraseCodificada += '3'
+        break
+
+      case 'o':
+        fraseCodificada += '4'
+        break
+
+      case 'u':
+        fraseCodificada += '5'
+        break
+      
+      default :
+        fraseCodificada += aux
+        
+    }
+
+  }
+  return fraseCodificada
+}
+function decode(frase) {
+  let aux = ''
+  fraseDecodificada = ''
+  for (let i = 0; i < frase.length; i += 1){
+    aux = frase[i]
+    switch (aux) {
+      case '1':
+        fraseDecodificada += 'a'
+        break
+      
+      case '2':
+        fraseDecodificada += 'e'
+        break
+
+      case '3':
+        fraseDecodificada += 'i'
+        break
+
+      case '4':
+        fraseDecodificada += 'o'
+        break
+
+      case '5':
+        fraseDecodificada += 'u'
+        break
+      
+      default :
+        fraseDecodificada += aux
+        
+    }
+  }
+    return fraseDecodificada
+}
 // Desafio 10
 function techList() {
   // seu código aqui
