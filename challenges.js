@@ -40,3 +40,19 @@ function footballPoints(wins, ties){
   return resultado
   
 }
+
+function highestCount(array){
+    maior = 0
+    vezesAparecida = 0
+    for (let i = 0; i <= array.length; i += 1){
+        if (array[i] > maior){
+            maior = array[i]
+            vezesAparecida = 1
+        } else {
+            if (array[i] === maior){
+                vezesAparecida += 1
+            }
+        }
+    }
+    return vezesAparecida
+}
