@@ -68,4 +68,21 @@ function catAndMouse(cat1, cat2){
 
 }
 
-console.log(catAndMouse(12, 12))
+function fizzBuzz(array){
+  let status = []
+  for (let num = 0; num < array.length; num += 1){
+      if (array[num] % 3 === 0 && array[num] % 5 === 0){
+        status.push("fizzBuzz")
+      }
+      else if (array[num] % 3 === 0){
+          status.push("fizz")
+      } else if (array[num] % 5 === 0){
+        status.push("buzz")  
+      } else {
+        status.push("bug!")
+      }
+  }
+  return status
+}
+
+console.log(fizzBuzz([2, 15, 7, 9, 45]))
