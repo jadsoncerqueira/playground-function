@@ -85,4 +85,3 @@ function fizzBuzz(array){
   return status
 }
 
-console.log(fizzBuzz([2, 15, 7, 9, 45]))
