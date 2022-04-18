@@ -56,3 +56,16 @@ function highestCount(array){
     }
     return vezesAparecida
 }
+
+function catAndMouse(cat1, cat2){
+  if (cat1 < cat2){
+      return 'cat1'
+  } else if (cat1 === cat2){
+      return "os gatos trombam e o rato foge"
+  } else {
+      return 'cat2'
+  }
+
+}
+
+console.log(catAndMouse(12, 12))
