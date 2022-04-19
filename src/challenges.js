@@ -160,10 +160,23 @@ function decode(frase) {
     return fraseDecodificada
 }
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(lista, nome) {
+  let objetos = []
+  for (let i = 0; i < lista.length; i += 1){
+    let aux = lista[i];
+    objetos.push({
+        tech: aux, 
+        nome: nome
+      })
+  }
+  if (objetos.length > 0){
+    return objetos
+  } else {
+    return "Erro: Lista"
+  }
+  
 }
-
+console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], "Jadson"))
 module.exports = {
   calcArea,
   catAndMouse,
