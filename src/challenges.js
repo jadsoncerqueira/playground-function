@@ -176,7 +176,7 @@ function techList(lista, nome) {
   }
   
 }
-console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], "Jadson"))
+
 module.exports = {
   calcArea,
   catAndMouse,
