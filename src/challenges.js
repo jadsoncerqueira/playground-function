@@ -31,7 +31,7 @@ function splitSentence(frase) {
 function concatName(lista) {
   let ultimoItem = lista[lista.length - 1];
   let primeiroItem = lista[0];
-  return (ultimoItem , ', ' , primeiroItem);
+  return (ultimoItem, ', ', primeiroItem);
 }
 
 // Desafio 5
@@ -63,26 +63,24 @@ function catAndMouse(mouse, cat1, cat2) {
     return 'cat2';
   } if (dist1 === dist2) {
     return 'os gatos trombam e o rato foge';
-  } 
+  }
   return 'cat1';
-  
 }
-
 // Desafio 8
-function fizzBuzz(arrayNumbers) {
-  let arrayString = [];
-  for (let n of arrayNumbers) {
-    if (n % 3 === 0 && n % 5 === 0) {
-      arrayString.push('fizzBuzz');
-    } else if (n % 5 === 0) {
-      arrayString.push('buzz');
-    } else if (n % 3 === 0) {
-      arrayString.push('fizz');
+function fizzBuzz(numbers) {
+  let result = [];
+  for (let index of numbers) {
+    if (index % 3 === 0 && index % 5 === 0) {
+      result.push('fizzBuzz');
+    } else if (index % 3 === 0) {
+      result.push('fizz');
+    } else if (index % 5 === 0) {
+      result.push('buzz');
     } else {
-      arrayString.push('bug!');
+      result.push('bug!');
     }
   }
-  return arrayString;;
+  return result;
 }
 
 // Desafio 9
