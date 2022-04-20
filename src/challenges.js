@@ -35,8 +35,8 @@ function splitSentence(frase) {
 // Desafio 4
 function concatName(lista) {
   ultimoItem = lista[lista.length - 1]
-    primeiroItem = lista[0]
-    return (ultimoItem + ", " + primeiroItem )
+  primeiroItem = lista[0]
+  return (ultimoItem + ", " + primeiroItem )
 }
 
 // Desafio 5
@@ -46,10 +46,10 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  maior = 0
+function highestCount(array) {
+  maior = -1
   vezesAparecida = 0
-  for (let i = 0; i <= array.length; i += 1){
+  for (let i = 0; i < array.length; i += 1){
       if (array[i] > maior){
           maior = array[i]
           vezesAparecida = 1
@@ -59,22 +59,24 @@ function highestCount() {
           }
       }
   }
-  return vezesAparecida
+  return Math.abs(vezesAparecida)
 }
 
 // Desafio 7
-function catAndMouse() {
-  if (cat1 < cat2){
-    return 'cat1'
-  } else if (cat1 === cat2){
-    return "os gatos trombam e o rato foge"
-  } else {
+function catAndMouse(mouse, cat1, cat2) {
+  let dist1 = Math.abs(mouse - cat1)
+  let dist2 = Math.abs(mouse - cat2)
+  if (dist1 > dist2){
     return 'cat2'
+  } else if (dist1 === dist2){
+    return 'os gatos trombam e o rato foge'
+  } else {
+    return 'cat1'
   }
 }
 
 // Desafio 8
-function fizzBuzz() {
+function fizzBuzz(array) {
   let status = []
   for (let num = 0; num < array.length; num += 1){
       if (array[num] % 3 === 0 && array[num] % 5 === 0){
@@ -162,17 +164,19 @@ function decode(frase) {
 // Desafio 10
 function techList(lista, nome) {
   let objetos = []
-  for (let i = 0; i < lista.length; i += 1){
-    let aux = lista[i];
-    objetos.push({
-        tech: aux, 
-        nome: nome
-      })
+  let lista2 = lista.sort()
+  for (let i = 0; i < lista2.length; i += 1){
+    let aux = lista2[i];
+    let object = {
+        tech: aux,
+        name: nome
+      }
+    objetos.push(object)
   }
   if (objetos.length > 0){
     return objetos
   } else {
-    return "Erro: Lista"
+    return "Vazio!"
   }
   
 }
