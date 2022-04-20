@@ -2,7 +2,7 @@
 function compareTrue(valor1, valor2) {
   if (valor1 === true && valor2 === true) {
     return true;
-  } 
+  }
   return false;
 }
 
@@ -16,7 +16,7 @@ function calcArea(base, height) {
 function splitSentence(frase) {
   let listaPalavra = [];
   let palavra = '';
-  for (let i = 0 ;i <= frase.length;i += 1) {
+  for (let i = 0; i <= frase.length; i += 1) {
     if (frase[i] === ' ' || i === frase.length) {
       listaPalavra.push(palavra);
       palavra = '';
@@ -31,7 +31,7 @@ function splitSentence(frase) {
 function concatName(lista) {
   let ultimoItem = lista[lista.length - 1];
   let primeiroItem = lista[0];
-  return (ultimoItem + ", " + primeiroItem )
+  return (ultimoItem , ', ' , primeiroItem);
 }
 
 // Desafio 5
@@ -41,7 +41,7 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(array) {
+function highestCount(repMaior) {
   let maiorNum = repMaior[0];
   let contador = 1;
   for (let index = 1; index < repMaior.length; index += 1) {
@@ -63,25 +63,26 @@ function catAndMouse(mouse, cat1, cat2) {
     return 'cat2';
   } if (dist1 === dist2) {
     return 'os gatos trombam e o rato foge';
-  } else {
-    return 'cat1';
-  }
+  } 
+  return 'cat1';
+  
 }
 
 // Desafio 8
-function fizzBuzz(numbers) {
-  for (let index = 0; index < numbers.length; index += 1) {
-    if (numbers[index] % 3 === 0 && numbers[index] % 5 === 0) {
-      numbers[index] = ('fizzBuzz');
-    } else if (numbers[index] % 3 === 0) {
-      numbers[index] = ('fizz');
-    } else if (numbers[index] % 5 === 0) {
-      numbers[index] = ('buzz');
+function fizzBuzz(arrayNumbers) {
+  let arrayString = [];
+  for (let n of arrayNumbers) {
+    if (n % 3 === 0 && n % 5 === 0) {
+      arrayString.push('fizzBuzz');
+    } else if (n % 5 === 0) {
+      arrayString.push('buzz');
+    } else if (n % 3 === 0) {
+      arrayString.push('fizz');
     } else {
-      numbers[index] = ('bug!');
+      arrayString.push('bug!');
     }
   }
-  return numbers;
+  return arrayString;;
 }
 
 // Desafio 9
@@ -100,11 +101,10 @@ function decode(text) {
     .replace(/4/g, 'o')
     .replace(/5/g, 'u');
   return dec;
-  
 }
 // Desafio 10
 function techList(lista, nome) {
-  let objetos = []
+  let objetos = [];
   let lista2 = lista.sort();
   for (let i = 0; i < lista2.length; i += 1) {
     let aux = lista2[i];
@@ -116,10 +116,8 @@ function techList(lista, nome) {
   }
   if (objetos.length > 0) {
     return objetos;
-  } 
+  }
   return 'Vazio!';
-
-
 }
 module.exports = {
   calcArea,

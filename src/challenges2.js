@@ -1,63 +1,47 @@
 // Desafio 11
-function generatePhoneNumber(arrayNumero) {
-  let numeroFormatado = ''
-  let cont = 0
-  if (arrayNumero.length === 11){
-    for (let i = 0 ; i < arrayNumero.length; i += 1){
-      for (let ix = 0 ; ix < arrayNumero.length; ix += 1){
-        if ( arrayNumero[ix] === arrayNumero[i]){
-          cont += 1 
-        }
-      } if (cont < 3){
-        cont = 0
-      }
-      if (i === 0){
-        numeroFormatado += "("
-        numeroFormatado += arrayNumero[i]
-      } else if (i === 1){
-        numeroFormatado += arrayNumero[i]
-        numeroFormatado += ") "
-      } else if (i === 6){
-        numeroFormatado += arrayNumero[i]
-        numeroFormatado += "-"
-        
-      } else if(arrayNumero[i] < 0 || arrayNumero[i] > 9 || cont >= 3){
-        numeroFormatado = "não é possível gerar um número de telefone com esses valores"
-        break
-      } else {
-        numeroFormatado += arrayNumero[i]
-      } 
-    } 
-  } else {
-    numeroFormatado = "Array com tamanho incorreto." 
+function generatePhoneNumber(number) {
+  if (number.length !== 11) {
+    return 'Array com tamanho incorreto.';
   }
-
-  return numeroFormatado
+  let cont;
+  for (let index = 0; index < number.length; index += 1) {
+    cont = 0;
+    for (let index1 = 0; index1 < number.length; index1 += 1) {
+      if (number[index] === number[index1]) {
+        cont += 1;
+      } if (cont === 3) {
+        return 'não é possível gerar um número de telefone com esses valores';
+      }
+    }
+  }
+  number.splice(0, 0, '(');
+  number.splice(3, 0, ')');
+  number.splice(4, 0, ' ');
+  number.splice(10, 0, '-');
+  number = number.join('');
+  if (number.length !== 15 || cont >= 3) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  } return number;
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  
-  if (lineB + lineC > lineA && lineA > Math.abs(lineB - lineC) && lineC + lineA > lineB && lineB > Math.abs(lineC - lineA) &&  lineA + lineB > lineC && lineC > Math.abs(lineA - lineB) ){
-    return true
-  } else {
-    return false
+  if (lineA < lineB + lineC && lineB < lineA + lineC && lineC < lineA + lineC) {
+    return true;
   }
+  return false;
 }
-
 // Desafio 13
 function hydrate(frase) {
-  let numeros = frase.match(/\d+/g)
-  let aux = 0
-  for (let i = 0; i < numeros.length; i += 1){
-      aux += parseInt(numeros[i])
+  let numeros = frase.match(/\d+/g);
+  let aux = 0;
+  for (let i = 0; i < numeros.length; i += 1) {
+    aux += parseInt(numeros[i]);
   }
-  if (aux > 1){
-    return aux + " copos de água"
-  } else {
-    return aux + " copo de água"
-  }
-  
+  if (aux > 1) {
+    return aux , ' copos de água';
+  } 
+  return aux , ' copo de água';
 }
 module.exports = {
   generatePhoneNumber,
