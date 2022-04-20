@@ -46,10 +46,19 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(frase) {
+  let numeros = frase.match(/\d+/g)
+  let aux = 0
+  for (let i = 0; i < numeros.length; i += 1){
+      aux += parseInt(numeros[i])
+  }
+  if (aux > 1){
+    return aux + " copos de água"
+  } else {
+    return aux + " copo de água"
+  }
+  
 }
-
 module.exports = {
   generatePhoneNumber,
   hydrate,
